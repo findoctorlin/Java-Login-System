@@ -53,17 +53,16 @@ public class LoginPage implements ActionListener{
 
 
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e) { //Invoked when an action occurs. e: the event to be processed
 		
 		if(e.getSource()==resetButton) {
 			userIDField.setText("");
 			userPasswordField.setText("");
 		}
 		
-		if(e.getSource()==loginButton) {
-			
+		if(e.getSource()==loginButton) { //ActionListener.actionPerformed(ActionEvent e) -> e.getSource(); 返回The object on which the Event initially occurred.			
 			String userID = userIDField.getText();
-			String password = String.valueOf(userPasswordField.getPassword());
+			String password = String.valueOf(userPasswordField.getPassword()); //getPassword()返回的是text类型
 			
 			if(logininfo.containsKey(userID)) {
 				if(logininfo.get(userID).equals(password)) {
